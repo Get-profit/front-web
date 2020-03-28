@@ -3,23 +3,43 @@
             <div class="log-form">
                 <h2 class="text-center">Login</h2>
                 <form method="POST">
-                    <div>
-                        <input type="text" name="formUsuario" value="">
-                        <label for="formUsuario">Usuário</label>
-                    </div>
-                    <div>
-                        <input type="password" name="formSenha" value="">
-                        <label for="formSenha">Senha</label>
-                    </div>
+                    <input-group :inputs="fields"/>
                     <button class="btn-login">Entrar</button>
                 </form>
             </div>
     </section>
 </template>
+
 <script>
+import CompInputGroup from '@/components/CompInputGroup'
+
 export default {
+
+    components:{
+        'input-group': CompInputGroup
+    },
+
+    data(){
+        return{
+            fields:[
+                {
+                    id: 1,
+                    label: 'Login',
+                    name: 'login',
+                    type: 'text'
+                },
+                {
+                    id: 2,
+                    label: 'Senha',
+                    name: 'senha',
+                    type: 'password'
+                }
+            ]
+        }
+    }
 }
 </script>
+
 <style lang="css" scoped>
 .log-form{
     width: 400px;
@@ -41,6 +61,7 @@ export default {
 .log-form form div{
     position: relative;
 }
+
 .log-form h2 {
     font-weight: 700;
     text-transform: uppercase;
@@ -48,32 +69,7 @@ export default {
     margin: 0 0 40px;
 }
 
-.log-form div label{
-    position: absolute;
-    left: 0;
-    top: 10px;
-    pointer-events: none;
-    color: #8bc24a;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: .5s;
-}
 
-.log-form div input{
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 30px;
-    box-shadow: none;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid #8bc24a;
-}
-
-.log-form div input:focus ~ label, .log-form div input:valid ~ label{
-    top: -12px;
-    font-size: 11px;
-    font-weight: 700;
-}
 
 .log-form button{
     background: #8bc24a;
