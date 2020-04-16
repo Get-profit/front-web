@@ -47,7 +47,7 @@ export default {
            "apelido": this.formData.login,
            "senha": this.formData.senha
         }
-        axios.post('http://localhost:62348/api/login', data, {
+        axios.post('http://35.208.89.16/api/login', data, {
             'Content-Type': 'text/plain'
         })
         .then(response => {
