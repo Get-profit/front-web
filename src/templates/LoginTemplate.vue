@@ -10,8 +10,19 @@ export default {
   name: 'LoginTemplate',
   components:{
     'login': LoginComponent
+  },
+  data() {
+    return {
+      usuario: false
+    }
+  },
+  created(){
+    let usuarioStorage = this.$store.getters.getUsuario
+    if(usuarioStorage){
+      this.usuario = this.$store.getters.getUsuario
+      this.$router.push('/home');
+    }
   }
-
 }
 </script>
 

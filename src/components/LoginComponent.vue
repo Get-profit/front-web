@@ -47,7 +47,6 @@ export default {
            "apelido": this.formData.login,
            "senha": this.formData.senha
         }
-        console.log(data)
         axios.post('http://localhost:62348/api/login', data, {
             'Content-Type': 'text/plain'
         })
@@ -61,13 +60,18 @@ export default {
                   }
                 })
                 setTimeout(() => {
+                  this.$store.commit('setUsuario', {
+                    'id': response.data.id,
+                    'apelido': response.data.apelido,
+                    'cargo': response.data.cargo
+                    })
                   sessionStorage.setItem('usuario', JSON.stringify({
                     'id': response.data.id,
                     'apelido': response.data.apelido,
                     'cargo': response.data.cargo
                   }))
+                  this.$router.push('/home')
                 }, 2000);
-                this.$router.push('/home')
             }else{
               this.$swal({
                 icon: 'error',
