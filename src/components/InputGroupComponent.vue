@@ -13,11 +13,14 @@ export default {
         inputs:{
             type: Array,
             required: true
+        },
+        formData:{
+          type: Object,
+          required: true
         }
     },
     data() {
         return {
-            formData: {},
         }
     },
 }
@@ -53,5 +56,5 @@ export default {
     font-size: 11px;
     font-weight: 700;
 }
-    
+
 </style>

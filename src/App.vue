@@ -5,11 +5,7 @@
 </template>
 
 <script>
-import CompNavbar from '@/components/CompNavbar'
 export default {
-  components:{
-    CompNavbar: 'navbar'
-  },
   name: 'App'
 }
 </script>

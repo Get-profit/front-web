@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/pages/PageLogin'
-import Servico from '@/pages/PageServico'
+import Login from '@/pages/Login'
+
+
 
 Vue.use(Router)
 
@@ -12,11 +13,6 @@ export default new Router({
       path: '/',
       name: 'Login',
       component: Login
-    },
-    {
-      path: '/ordem-servico',
-      name: 'OrdemServico',
-      component: Servico
     }
   ]
 })
