@@ -1,6 +1,6 @@
 <template>
   <site-template>
-      <table-v key="teste" :infos="listarClientes"/>
+      <table-v key="teste" :infos="listarUsuarios"/>
   </site-template>
 </template>
 
@@ -8,7 +8,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import SiteTemplate from '@/templates/SiteTemplate'
-import TableComponent from '@/components/TableComponent'
+import TableComponent from '@/components/TableComponent_u'
 import VueSweetalert2 from 'vue-sweetalert2'
 
 Vue.use(VueSweetalert2)
@@ -27,9 +27,9 @@ export default {
     let usuarioStorage = this.$store.getters.getUsuario
     if(usuarioStorage){
       this.usuario = this.$store.getters.getUsuario
-      axios.get('https://projeto-acessorios.appspot.com/api/clientes')
+      axios.get('https://projeto-acessorios.appspot.com/api/usuarios')
       .then(response => {
-        this.$store.commit('setClientes', response.data)
+        this.$store.commit('setListUsuarios', response.data)
       })
       .catch(error => {
         this.$swal.fire({
@@ -41,8 +41,8 @@ export default {
     }
   },
   computed:{
-    listarClientes(){
-      return this.$store.getters.getClientes
+    listarUsuarios(){
+      return this.$store.getters.getListUsuarios
     }
   }
 }

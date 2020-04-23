@@ -8,20 +8,40 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
-Vue.prototype.$api = 'http://localhost:62348/api'
 
 var store = {
   state: {
-    usuario: sessionStorage.getItem('usuario') ? JSON.parse(sessionStorage.getItem('usuario')) : null
+    usuario: sessionStorage.getItem('usuario') ? JSON.parse(sessionStorage.getItem('usuario')) : null,
+    clientes: [],
+    listUsuarios: [],
+    listOrdemServico: []
   },
   getters:{
     getUsuario: state => {
-      return state.usuario;
+      return state.usuario
+    },
+    getClientes: state => {
+      return state.clientes
+    },
+    getListUsuarios: state => {
+      return state.listUsuarios
+    },
+    getListOrdemServico: state => {
+      return state.listOrdemServico
     }
   },
   mutations:{
     setUsuario(state, n){
-      state.usuario = n;
+      state.usuario = n
+    },
+    setClientes(state, n){
+      state.clientes = n
+    },
+    setListUsuarios(state, n){
+      state.listUsuarios = n
+    },
+    setListOrdemSevico(state, n){
+      state.listOrdemServico = n
     }
   }
 }

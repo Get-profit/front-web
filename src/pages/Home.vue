@@ -39,7 +39,7 @@ export default {
       },
       ordemservico:{
         titulo: 'Ordem de Serviço',
-        rota: '/ordens-servico',
+        rota: '/ordem-servico',
         descricao: "Aqui você poderá ver a listagem de ordens de serviço, cadastrar, editar e remover os dados das Os's ."
       }
     }
