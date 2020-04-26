@@ -5,6 +5,8 @@ import Home from '@/pages/Home'
 import Clientes from '@/pages/Clientes'
 import Usuarios from '@/pages/Usuarios'
 import OrdemServico from '@/pages/OrdemServico'
+import CadastroCliente from '@/pages/CadastroCliente'
+import CadastroUsuario from '@/pages/CadastroUsuario'
 
 
 
@@ -29,14 +31,25 @@ export default new Router({
       component: Clientes
     },
     {
+      path: '/clientes/cadastrar',
+      name: 'Cadastrar Cliente',
+      component: CadastroCliente
+    },
+    {
       path: '/usuarios',
       name: 'Usuarios',
       component: Usuarios
     },
     {
+      path: '/usuarios/cadastrar',
+      name: 'Cadastrar Usuario',
+      component: CadastroUsuario
+    },
+    {
       path: '/ordem-servico',
       name: 'OrdemServico',
       component: OrdemServico
-    }
+    },
+
   ]
 })

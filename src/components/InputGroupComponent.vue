@@ -1,14 +1,15 @@
 <template>
 <div class="wrap-form">
     <div v-for="(item, index) in inputs" :key="index" class="wrap-input">
-        <input v-if="item.type !== 'textarea'" :type="item.type" :name="item.name" v-model="formData[item.name]">
-        <label :for="item.label">{{item.label}}</label>
+          <input v-if="item.type !== 'textarea'" :type="item.type" :name="item.name" v-model="formData[item.name]">
+          <label :for="item.label">{{item.label}}</label>
     </div>
 </div>
 </template>
 
 <script>
 export default {
+
     props:{
         inputs:{
             type: Array,
@@ -23,6 +24,11 @@ export default {
         return {
         }
     },
+    mounted(){
+      this.inputs.forEach(input => {
+        this.$set(this.formData, input.name, '')
+      })
+    }
 }
 </script>
 
@@ -55,6 +61,18 @@ export default {
     top: -12px;
     font-size: 11px;
     font-weight: 700;
+}
+
+.validation{
+  position: relative;
+}
+
+.validation .hasError{
+  position: absolute;
+  color: red;
+  top: 35px;
+  left: 0;
+  font-size: 10px;
 }
 
 </style>

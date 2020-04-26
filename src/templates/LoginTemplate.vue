@@ -1,16 +1,10 @@
 <template>
-    <section id="login">
-      <login />
-    </section>
+<div class="">
+  <slot />
+</div>
 </template>
 <script>
-import LoginComponent from '@/components/LoginComponent'
-
 export default {
-  name: 'LoginTemplate',
-  components:{
-    'login': LoginComponent
-  },
   data() {
     return {
       usuario: false
