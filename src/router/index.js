@@ -7,6 +7,7 @@ import Usuarios from '@/pages/Usuarios'
 import OrdemServico from '@/pages/OrdemServico'
 import CadastroCliente from '@/pages/CadastroCliente'
 import CadastroUsuario from '@/pages/CadastroUsuario'
+import CadastroOrdem from '@/pages/CadastroOrdem'
 
 
 
@@ -31,7 +32,7 @@ export default new Router({
       component: Clientes
     },
     {
-      path: '/clientes/cadastrar',
+      path: '/clientes/cadastrar/:name?/:id?',
       name: 'Cadastrar Cliente',
       component: CadastroCliente
     },
@@ -41,7 +42,7 @@ export default new Router({
       component: Usuarios
     },
     {
-      path: '/usuarios/cadastrar',
+      path: '/usuarios/cadastrar/:apelido?/:id?',
       name: 'Cadastrar Usuario',
       component: CadastroUsuario
     },
@@ -50,6 +51,11 @@ export default new Router({
       name: 'OrdemServico',
       component: OrdemServico
     },
+    {
+      path: '/ordem-servico/cadastrar/:id?',
+      name: 'Cadastrar ordem de Servico',
+      component: CadastroOrdem
+    }
 
   ]
 })

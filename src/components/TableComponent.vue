@@ -67,11 +67,12 @@
           </ul>
         </div>
         <div class="card-footer">
-          <router-link :to="`/clientes/${value.nome}/${value.id}`" class="btn btn-outline-warning">Editar <i class="far fa-edit"></i> </router-link>
+          <router-link :to="`/clientes/cadastrar/${value.nome}/${value.id}`" class="btn btn-outline-warning">Editar <i class="far fa-edit"></i> </router-link>
           <button class="btn btn-outline-danger" @click="excluirCliente(value.id)">Deletar <i class="far fa-trash-alt"></i> </button>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 <script>

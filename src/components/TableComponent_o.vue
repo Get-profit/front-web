@@ -68,7 +68,7 @@
           </ul>
         </div>
         <div class="card-footer">
-          <router-link :to="`/ordem-servico/${value.apelido}/${value.id}`" class="btn btn-outline-warning">Editar <i class="far fa-edit"></i> </router-link>
+          <router-link :to="`/ordem-servico/cadastrar/${value.id}`" class="btn btn-outline-warning">Fechar ordem <i class="far fa-edit"></i> </router-link>
           <button class="btn btn-outline-danger" @click="excluirOrdemServico(value.id)">Deletar <i class="far fa-trash-alt"></i> </button>
         </div>
       </div>

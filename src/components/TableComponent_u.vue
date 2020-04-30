@@ -20,7 +20,7 @@
           </ul>
         </div>
         <div class="card-footer">
-          <router-link :to="`/usuarios/${value.apelido}/${value.id}`" class="btn btn-outline-warning">Editar <i class="far fa-edit"></i> </router-link>
+          <router-link :to="`/usuarios/cadastrar/${value.apelido}/${value.id}`" class="btn btn-outline-warning">Editar <i class="far fa-edit"></i> </router-link>
           <button class="btn btn-outline-danger" @click="excluirUsuario(value.id)">Deletar <i class="far fa-trash-alt"></i> </button>
         </div>
       </div>

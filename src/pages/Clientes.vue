@@ -23,11 +23,11 @@ export default {
       usuario: false,
     }
   },
-  created(){
+  async created(){
     let usuarioStorage = this.$store.getters.getUsuario
     if(usuarioStorage){
       this.usuario = this.$store.getters.getUsuario
-      axios.get('https://projeto-acessorios.appspot.com/api/clientes')
+      await axios.get('https://projeto-acessorios.appspot.com/api/clientes')
       .then(response => {
         this.$store.commit('setClientes', response.data)
       })
