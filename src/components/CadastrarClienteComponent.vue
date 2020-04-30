@@ -44,7 +44,7 @@ export default {
   },
   methods:{
     cadastrar(){
-      if(this.$route.params.id != ''){
+      if(this.$route.params.id){
                 const data = {
                 "id": parseInt(this.$route.params.id),
                 "nome": this.formData.nome,
@@ -149,7 +149,7 @@ export default {
     },
 
     getData(){
-      if(this.$route.params.name != '' && this.$route.params.id != ''){
+      if(this.$route.params.id){
         axios.get('https://projeto-acessorios.appspot.com/api/clientes/' + parseInt(this.$route.params.id))
         .then(response => {
           this.formData = {
